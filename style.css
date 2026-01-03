@@ -1,0 +1,121 @@
+:root {
+    --black: #0a0a0a;
+    --dark-grey: #1a1a1a;
+    --silver: #c0c0c0;
+    --silver-bright: #e0e0e0;
+    --text-main: #ffffff;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+}
+
+.brand {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin: 0;
+    color: var(--silver);
+}
+
+.brand span {
+    font-weight: 300;
+    color: var(--text-main);
+}
+
+.slogan {
+    font-size: 0.8rem;
+    color: var(--silver);
+    opacity: 0.7;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.app-card {
+    background: var(--dark-grey);
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--silver);
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #222, #000);
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 1px solid #444;
+}
+
+.app-title {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+}
+
+.app-version {
+    font-size: 0.8rem;
+    color: var(--silver);
+    background: rgba(192, 192, 192, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.app-desc {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.btn-download {
+    display: inline-block;
+    background: linear-gradient(to right, #bdbdbd, #ffffff);
+    color: black;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-download:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
+}

@@ -1,21 +1,20 @@
-// CONFIGURACIÓN: Cambia esto por tu usuario/repositorio
-const USER_REPO = "tu-usuario/tu-repositorio-de-apps";
+const USER_REPO = "josecabralesdev/decs-app-store";
 
 async function fetchApps() {
     const container = document.getElementById('app-container');
-    
+
     try {
         const response = await fetch(`https://api.github.com/repos/${USER_REPO}/releases`);
         if (!response.ok) throw new Error('No se pudo conectar con el servidor de DECS');
-        
+
         const releases = await response.json();
         container.innerHTML = ''; // Limpiar cargador
 
         releases.forEach(release => {
             // Buscamos el APK y el Icono entre los archivos de la release
             const apkFile = release.assets.find(asset => asset.name.endsWith('.apk'));
-            const iconFile = release.assets.find(asset => 
-                asset.name.toLowerCase().includes('icon') && 
+            const iconFile = release.assets.find(asset =>
+                asset.name.toLowerCase().includes('icon') &&
                 (asset.name.endsWith('.png') || asset.name.endsWith('.jpg'))
             );
 
